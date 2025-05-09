@@ -6,7 +6,7 @@ from pathlib import Path
 from datetime import datetime
 
 # --- Elérési utak ---
-base_path = Path("D:/School/SZE/ml_jobs_analysis")
+base_path = Path(__file__).resolve().parent
 data_path = base_path / "data" / "jobs.csv"
 
 # --- Időbélyeges output mappa ---
@@ -52,7 +52,7 @@ with pd.ExcelWriter(output_xlsx, engine='xlsxwriter') as writer:
     # Top Skills chart
     fig, ax = plt.subplots()
     top_skills.plot(kind='barh', ax=ax, color='skyblue')
-    ax.set_title('Top 15 Required Skills')
+    ax.set_title('Top Required Skill Levels')
     fig.tight_layout()
     chart_path = output_dir / "top_skills.png"
     fig.savefig(chart_path)
