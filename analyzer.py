@@ -1,6 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import openpyxl
+import PyQT5
 from wordcloud import WordCloud
 from pathlib import Path
 from datetime import datetime
